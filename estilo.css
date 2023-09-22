@@ -2,7 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: linear-gradient(to top, #007BFF 0%, #30cfd0  100%);
+    min-width: 320px; /* Establece el ancho mínimo */
+
 }
 
 .container {
@@ -16,8 +18,9 @@ header {
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(4, 8, 255, 0.9); /* Agrega una sombra suave */
     transition: background-color 0.3s ease;
+    border-radius: 10px;
 }
 
 header:hover {
@@ -38,19 +41,29 @@ h2 {
 section {
     background-color: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-bottom: 2px solid #007BFF;
+
 }
 
 .img {
     width: 120px;
     height: 120px;
+    border-radius: 50%;
+    border: #007BFF solid 2px;
+}
+
+.img:hover {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: #007BFF solid 2px;
 }
 
 ul {
@@ -72,17 +85,59 @@ ul li {
     flex-direction: column;
 }
 
+
+#habilidades ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#habilidades li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#habilidades li i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+#habilidades li::before {
+    content: "\2022"; 
+    color: #007BFF; 
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+#habilidades li:hover {
+    color: #007BFF; /* Cambia el color del texto al pasar el ratón por encima */
+}
+
+#habilidades li:hover i {
+    color: #007BFF; /* Cambia el color del icono al pasar el ratón por encima */
+}
+
+
+
 .divEducacion {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: blue;
 }
 
 a:hover {
     color: #e40909; /* Cambia el color al pasar el ratón por encima */
     text-decoration: underline; /* Subraya el enlace */
 }
+
+
+
 
 
 @media (min-width: 768px) {
@@ -124,6 +179,14 @@ a:hover {
         font-size: 1.5rem;
     }
 
+    section {
+        margin: 0;
+    }
+    
+    #educacion .divEducacion h3 {
+        text-align: center;
+    }
+
     .img {
         width: 80px;
         height: 80px;
@@ -140,6 +203,10 @@ a:hover {
         font-size: 1.2rem;
     }
 
+    h3{
+        text-wrap: balance;
+    }
+
     .img {
         width: 60px;
         height: 60px;
@@ -147,5 +214,8 @@ a:hover {
 
     section {
         padding: 10px;
+    }
+    #educacion .divEducacion h3 {
+        text-align: center;
     }
 }
